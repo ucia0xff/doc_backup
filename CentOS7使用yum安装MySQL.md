@@ -7,7 +7,7 @@
 ### 1.下载 MySQL 官方的 Yum Repository
   
 ```bash
-# wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+# wget -i http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
 ```
  
 ### 2.安装 Yum Repository
