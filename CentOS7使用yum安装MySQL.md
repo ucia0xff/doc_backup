@@ -44,4 +44,47 @@
 
 ## 二、配置
 
-待续……
+### 1.连接 MySQL
+
+```bash
+# mysql -u root -p
+```
+如果直接回车不用输入密码就进入了 MySQL 就直接成功了，
+否则：
+
+```bash
+# grep "password" /var/log/mysqld.log
+```
+然后在出来的结果中有这么一行：
+
+```text
+A temporary password is generated for root@localhost: MVZsf:A<Z2k<
+```
+这个`MVZsf:A<Z2k<`就是随机生成的密码，包含标点符号。
+输入：
+
+```bash
+# mysql -u root -p
+```
+然后再输入密码，即可进入MySQL。
+
+### 2.修改密码
+
+刚进入MySQL什么都不能做，只能修改密码，而因为密码规则的原因，需要设置非常复杂的密码才能修改成功：
+
+```sql
+alter user 'root'@'localhost' identified by 'z?guwrBhH7p>';
+```
+
+修改密码后，可以改密码规则，方便之后修改成一个简单密码：
+
+```sql
+set global validate_password_policy=0;
+set global validate_password_length=1;
+```
+
+此时可以将密码改成任意密码了：
+
+```sql
+alter user 'root'@'localhost' identified by 'toor';
+```
