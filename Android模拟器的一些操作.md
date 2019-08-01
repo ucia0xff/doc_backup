@@ -66,7 +66,7 @@ adb devices
 
 ### 安装apk到指定设备
 
-用`-s`指定要安装的设备：
+用`-s 设备名称`指定要安装的设备：
 ```text
 adb -s emulator-5554 install filename.apk
 ```
@@ -80,4 +80,39 @@ adb -s emulator-5554 uninstall packagename
 
 ```text
 adb -s emulator-5554 install -r filename.apk
+```
+
+---
+## 文件传输
+
+### push：从PC传输到Android设备
+
+将`PC`上的文件传输到`Android设备`
+```text
+adb push .\filename.apk /sdcard/Download
+```
+
+将`PC`上的文件传输到`Android设备`，并重命名
+```text
+adb push .\filename.apk /sdcard/Download/1.apk
+```
+
+### pull：从Android设备传输到PC
+
+把`Android设备`上的文件传输到`PC`
+```text
+adb pull /sdcard/Download/filename.apk .
+```
+
+把`Android设备`上的文件传输到`PC`，并重命名
+```text
+adb pull /sdcard/Download/filename.apk .\1.apk 
+```
+
+### 指定设备传输
+
+如果adb连接了多个设备，用`-s 设备名称`指定传输哪个设备。
+```text
+adb -s emulator-5554 push .\filename.apk /sdcard/Download/1.apk
+adb -s emulator-5554 pull /sdcard/Download/filename.apk .\1.apk 
 ```
