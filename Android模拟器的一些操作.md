@@ -22,6 +22,8 @@ emulator -avd Nexus_5X_API_29_x86
 ---
 ## 关闭和启动adb服务
 
+需要将`android-sdk`下的`platform-tools`文件夹所在路径加入`Path`中
+
 ### 关闭adb服务
 
 ```text
