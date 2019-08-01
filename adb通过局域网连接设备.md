@@ -16,7 +16,9 @@ $ su
 ---
 ## PC端
 
-可以将`adb.exe`所在路径加到`Path`中，然后在任意位置打开`cmd`或`PowerShell`，输入：
+需要将`android-sdk`下的`platform-tools`文件夹所在路径加入`Path`中，这是`adb.exe`所在路径。
+
+然后在任意位置打开`cmd`或`PowerShell`，输入：
 ```text
 adb connect x.x.x.x:5555
 ```
