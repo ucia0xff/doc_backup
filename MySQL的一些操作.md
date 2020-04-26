@@ -30,3 +30,14 @@ grant all privileges on *.* to 'root'@'%' identified by 'toor';
 ```sql
 grant all privileges on dbname.* to 'tong'@'%' identified by 'tong';
 ```
+
+### 查看权限
+
+查看授权语句
+```sql
+show grants for 'root'@'%';
+```
+
+查看授予的权限
+```sql
+select * from mysql.user where user='erp_standard';```
