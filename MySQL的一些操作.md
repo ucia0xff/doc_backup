@@ -7,6 +7,24 @@ mysql -uroot -p
 ```
 
 ---
+### 查看运行状态
+
+```text
+service mysqld status
+
+或
+
+service mysql status
+```
+
+---
+### 查看端口是否在使用
+
+```text
+netstat -ntlp | grep 3306
+```
+
+---
 ### 连接字符串
 
 ```text
@@ -46,4 +64,5 @@ show grants for 'root'@'%';
 
 查看授予的权限
 ```sql
-select * from mysql.user where user='erp_standard';```
+select * from mysql.user where user='erp_standard';
+```
